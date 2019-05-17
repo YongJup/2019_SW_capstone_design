@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.capstone.jeju.Activity.MainActivity;
+
 public class Splash extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 3000;

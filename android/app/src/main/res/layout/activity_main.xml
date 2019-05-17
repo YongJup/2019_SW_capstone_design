@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -28,26 +28,30 @@
             tools:layout_editor_absoluteY="32dp" />
     </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:tabBackground="@drawable/tab_color_selector"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="#000000"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="#334856"
-        app:tabTextColor="#9EA9AF">
 
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
+    <com.capstone.jeju.StaticViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_color_selector"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#000000"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#334856"
+            app:tabTextColor="#9EA9AF">
+
+        </android.support.design.widget.TabLayout>
+
+    </com.capstone.jeju.StaticViewPager>
 
 
 </android.support.constraint.ConstraintLayout>
