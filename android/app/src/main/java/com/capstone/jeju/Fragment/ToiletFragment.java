@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.capstone.jeju.Activity.MainActivity;
@@ -29,21 +32,32 @@ public class ToiletFragment extends Fragment {
     private View view;
     private MapView mMapView;
     private MapPOIItem marker;
+    private WebView webView;
+    private WebSettings webSettings;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_toilet, container, false);
-        ViewGroup mapLayout = (ViewGroup) view.findViewById(R.id.map_view2);
-        if(mMapView != null && mMapView.getParent() != null) ((ViewGroup) mMapView.getParent()).removeView(mMapView);
-        mMapView = new MapView(getActivity());
-        mapLayout.addView(mMapView);
-        mapLayout.requestDisallowInterceptTouchEvent(true);
-        marker = new MapPOIItem();
+//        ViewGroup mapLayout = (ViewGroup) view.findViewById(R.id.map_view2);
+//        if(mMapView != null && mMapView.getParent() != null) ((ViewGroup) mMapView.getParent()).removeView(mMapView);
+//        mMapView = new MapView(getActivity());
+//        mapLayout.addView(mMapView);
+//        mapLayout.requestDisallowInterceptTouchEvent(true);
+//        marker = new MapPOIItem();
+//
+//        setCenterPoint();
+//        setMarker();
+//        setMarker1();
+//        setMarker2();
 
-        setCenterPoint();
-        setMarker();
-        setMarker1();
-        setMarker2();
+        webView = (WebView) view.findViewById(R.id.webview2);
+        webView.setWebViewClient(new WebViewClient());
+        webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("https://www.google.com/maps/d/viewer?mid=1hbbyr37e" +
+                "Mm376UR1MgGyBBgoV4pOVNIh&ll=33.38206286220829%2C126.49410612107022&z=10");
 
         return view;
     }

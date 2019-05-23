@@ -1,20 +1,18 @@
 package com.capstone.jeju.Fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
-import com.capstone.jeju.MapApplication;
 import com.capstone.jeju.R;
 
-import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPoint;
-import net.daum.mf.map.api.MapPointBounds;
-import net.daum.mf.map.api.MapPolyline;
 import net.daum.mf.map.api.MapView;
 
 
@@ -22,24 +20,33 @@ public class TransportFragment extends Fragment {
 
     private View view;
     MapView mMapView;
+    private WebView webView;
+    private WebSettings webSettings;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        mMapView= ((MapApplication)getActivity().getApplication()).mapview(getActivity());
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_transport, container, false);
-        ViewGroup mapLayout = (ViewGroup) view.findViewById(R.id.map_view);
-        if(mMapView != null && mMapView.getParent() != null) ((ViewGroup) mMapView.getParent()).removeView(mMapView);
-        mMapView = new MapView(getActivity());
-        mapLayout.addView(mMapView);
-        mapLayout.requestDisallowInterceptTouchEvent(true);
+//        ViewGroup mapLayout = (ViewGroup) view.findViewById(R.id.map_view);
+//        if(mMapView != null && mMapView.getParent() != null) ((ViewGroup) mMapView.getParent()).removeView(mMapView);
+//        mMapView = new MapView(getActivity());
+//        mapLayout.addView(mMapView);
+//        mapLayout.requestDisallowInterceptTouchEvent(true);
 
-        setCenterPoint();
+        webView = (WebView) view.findViewById(R.id.webview);
+        webView.setWebViewClient(new WebViewClient());
+        webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("https://yongjup.github.io");
+//
+//        setCenterPoint();
+
 //        addPolyline1();
         return view;
     }

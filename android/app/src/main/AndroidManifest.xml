@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.capstone.jeju">
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name=".MapApplication"
@@ -17,7 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="20bd4086b72522184dce9469574ad962"/>
+        <activity android:name=".Activity.TransportWebViewActivity"></activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="20bd4086b72522184dce9469574ad962" />
+
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
