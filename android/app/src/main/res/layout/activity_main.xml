@@ -28,7 +28,6 @@
             tools:layout_editor_absoluteY="32dp" />
     </android.support.v7.widget.Toolbar>
 
-
     <com.capstone.jeju.StaticViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
@@ -48,10 +47,6 @@
             app:tabMode="fixed"
             app:tabSelectedTextColor="#334856"
             app:tabTextColor="#9EA9AF">
-
         </android.support.design.widget.TabLayout>
-
     </com.capstone.jeju.StaticViewPager>
-
-
 </android.support.constraint.ConstraintLayout>

@@ -103,5 +103,4 @@ public class ToiletFragment extends Fragment {
             mMapView = null;
         }
     }
-
 }
