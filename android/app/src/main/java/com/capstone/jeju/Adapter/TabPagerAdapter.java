@@ -1,15 +1,12 @@
 package com.capstone.jeju.Adapter;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.capstone.jeju.Fragment.MiseFragment;
 import com.capstone.jeju.Fragment.ToiletFragment;
 import com.capstone.jeju.Fragment.TransportFragment;
-
-import net.daum.mf.map.api.MapView;
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
     private int tabCount;

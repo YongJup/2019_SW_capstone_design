@@ -1,13 +1,13 @@
-package com.capstone.jeju;
+package com.capstone.jeju.Activity;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.capstone.jeju.Activity.MainActivity;
+import com.capstone.jeju.R;
 
-public class Splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 3000;
 

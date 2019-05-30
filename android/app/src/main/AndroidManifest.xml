@@ -21,7 +21,7 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="20bd4086b72522184dce9469574ad962" />
 
-        <activity android:name=".Splash">
+        <activity android:name=".Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

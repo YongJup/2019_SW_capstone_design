@@ -1,23 +1,20 @@
 package com.capstone.jeju.Activity;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import com.capstone.jeju.Adapter.TabPagerAdapter;
 import com.capstone.jeju.Fragment.ToiletFragment;
 import com.capstone.jeju.Fragment.TransportFragment;
 import com.capstone.jeju.R;
 import com.capstone.jeju.StaticViewPager;
-
-import net.daum.mf.map.api.MapView;
 
 public class MainActivity extends AppCompatActivity {
 
