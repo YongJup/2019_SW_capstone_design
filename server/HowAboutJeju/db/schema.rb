@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_224048) do
     t.integer "pm10Grade"
     t.integer "pm25Value"
     t.integer "pm25Grade"
+    t.integer "airGrade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
