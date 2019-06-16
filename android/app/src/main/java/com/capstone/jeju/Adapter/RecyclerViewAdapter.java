@@ -15,7 +15,6 @@ import com.capstone.jeju.R;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
@@ -43,6 +42,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.miseArrayList = miseArrayList;
     }
 
+    public void setMiseArrayList(ArrayList<MiseCategory> miseArrayList) {
+        this.miseArrayList = miseArrayList;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,12 +56,54 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.stationName.setText(miseArrayList.get(position).getStationName());
+        holder.stationName.setText(miseArrayList.get(position).getName());
         holder.dataTime.setText(miseArrayList.get(position).getDataTime());
         holder.pm10Value.setText(String.valueOf(miseArrayList.get(position).getPm10Value()));
         holder.pm25Value.setText(String.valueOf(miseArrayList.get(position).getPm25Value()));
-        holder.itemLayout.setBackgroundResource(miseArrayList.get(position).getPm10Value() > 30 ? R.color.colorBad : R.color.colorGood);
-        holder.currentCondition.setText(miseArrayList.get(position).getPm10Value() > 30 ? "나쁨" : "좋음");
+
+        if (miseArrayList.get(position).getPm10Value() <= 30) {
+            holder.itemLayout.setBackgroundResource(R.color.colorGood);
+            holder.currentCondition.setText("좋음");
+            holder.currentImage.setImageResource(R.drawable.good);
+            holder.currentImage2.setImageResource(R.drawable.good);
+        } else if (miseArrayList.get(position).getPm10Value() <= 80) {
+            holder.itemLayout.setBackgroundResource(R.color.colorSoso);
+            holder.currentCondition.setText("보통");
+            holder.currentImage.setImageResource(R.drawable.soso);
+            holder.currentImage2.setImageResource(R.drawable.soso);
+        } else if (miseArrayList.get(position).getPm10Value() <= 150) {
+            holder.itemLayout.setBackgroundResource(R.color.colorNotBad);
+            holder.currentCondition.setText("나쁨");
+            holder.currentImage.setImageResource(R.drawable.bad);
+            holder.currentImage2.setImageResource(R.drawable.bad);
+        } else {
+            holder.itemLayout.setBackgroundResource(R.color.colorBad);
+            holder.currentCondition.setText("매우나쁨");
+            holder.currentImage.setImageResource(R.drawable.verybad);
+            holder.currentImage2.setImageResource(R.drawable.verybad);
+        }
+
+        if (miseArrayList.get(position).getPm25Value() <= 30) {
+            holder.itemLayout.setBackgroundResource(R.color.colorGood);
+            holder.currentImage.setImageResource(R.drawable.good);
+            holder.currentImage3.setImageResource(R.drawable.good);
+            holder.currentCondition.setText("좋음");
+        } else if (miseArrayList.get(position).getPm25Value() <= 80) {
+            holder.itemLayout.setBackgroundResource(R.color.colorSoso);
+            holder.currentImage.setImageResource(R.drawable.soso);
+            holder.currentImage3.setImageResource(R.drawable.soso);
+            holder.currentCondition.setText("보통");
+        } else if (miseArrayList.get(position).getPm25Value() <= 150) {
+            holder.itemLayout.setBackgroundResource(R.color.colorNotBad);
+            holder.currentImage.setImageResource(R.drawable.bad);
+            holder.currentImage3.setImageResource(R.drawable.bad);
+            holder.currentCondition.setText("나쁨");
+        } else {
+            holder.itemLayout.setBackgroundResource(R.color.colorBad);
+            holder.currentImage.setImageResource(R.drawable.verybad);
+            holder.currentImage3.setImageResource(R.drawable.verybad);
+            holder.currentCondition.setText("매우나쁨");
+        }
     }
 
     @Override

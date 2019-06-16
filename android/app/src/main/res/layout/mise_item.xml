@@ -75,7 +75,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/good"
+                    app:srcCompat="@drawable/verybad"
                     tools:srcCompat="@drawable/good" />
 
                 <TextView
@@ -113,7 +113,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/good"
+                    app:srcCompat="@drawable/verybad"
                     tools:srcCompat="@drawable/good" />
 
                 <TextView
@@ -142,7 +142,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mise_time"
-        app:srcCompat="@drawable/good"
+        app:srcCompat="@drawable/verybad"
         tools:srcCompat="@drawable/good" />
 
     <TextView

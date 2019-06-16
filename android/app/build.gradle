@@ -38,4 +38,5 @@ dependencies {
     implementation files('libs/libDaumMapAndroid.jar')
     implementation "cz.intik:overflow-pager-indicator:2.0.0"
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
