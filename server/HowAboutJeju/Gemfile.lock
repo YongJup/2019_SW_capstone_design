@@ -126,9 +126,9 @@ GEM
     multi_json (1.13.1)
     netrc (0.11.0)
     nio4r (2.3.1)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.3-x64-mingw32)
+    nokogiri (1.10.8-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
     puma (3.12.1)
@@ -255,6 +255,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   json
   kaminari
+  nokogiri (>= 1.10.4)
   puma (~> 3.11)
   rails (~> 5.2.3)
   rails_db
